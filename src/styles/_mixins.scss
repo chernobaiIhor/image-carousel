@@ -1,0 +1,43 @@
+@mixin font-size($mobile-size, $desktop-size) {
+  font-size: $mobile-size;
+
+  @include lg-screen() {
+    font-size: $desktop-size;
+  }
+}
+
+@mixin font-weight($weight) {
+  & {
+    font-weight: $weight;
+  }
+}
+
+@mixin lg-screen() {
+  @media (min-width: $breakpoint-lg) {
+    @content;
+  }
+}
+
+@mixin absolute-positioning() {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+}
+
+@mixin gradient-border-mask {
+  content: "";
+  @include absolute-positioning();
+  background: linear-gradient(-130deg, $background-light, $background-dark 45%, $background-light) border-box;
+  border-radius: inherit;
+  border: 2px solid transparent;
+  -webkit-mask: linear-gradient($background-light 0 0) content-box, linear-gradient($background-light 0 0);
+  mask-composite: exclude;
+}
+
+@mixin img-style($max-width: 100%, $height: 90%, $border-radius: inherit) {
+  max-width: $max-width;
+  height: $height;
+  border-radius: $border-radius;
+}
+

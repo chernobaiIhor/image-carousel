@@ -1,0 +1,53 @@
+.thumbsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: clamp(1rem, 3vw, 3rem);
+  width: 100%;
+  margin-bottom: $indent-xl;
+
+  .thumbnail {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    border-radius: $border-radius-sm;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    opacity: $opacity;
+    display: grid;
+    place-items: center;
+
+    &.active {
+      img {
+        @include img-style(95%, 85%, inherit);
+      }
+
+      &:before {
+        @include gradient-border-mask;
+      }
+    }
+
+    @include lg-screen() {
+      &:not(.active) {
+        opacity: $opacity;
+      }
+
+      &.active {
+        z-index: 10;
+        transform: scale(2) translateX(1rem);
+
+        img {
+          @include img-style(95%, 85%, inherit);
+        }
+
+        &:before {
+          @include gradient-border-mask;
+        }
+      }
+
+      &.afterActive {
+        transform: translateX(4rem);
+      }
+    }
+  }
+}

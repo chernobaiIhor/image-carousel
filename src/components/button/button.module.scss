@@ -1,0 +1,55 @@
+.button {
+  background-color: $background-light;
+  color: $color-light;
+  border: 2px solid $background-light;
+  border-radius: $border-radius-lg;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out,
+  color 0.3s ease-in-out,
+  border 0.3s ease-in-out,
+  border-radius 0.3s ease-in-out;
+
+  &:hover {
+    border: 2px solid $background-dark;
+    border-radius: $border-radius-sm;
+  }
+
+  &.badge {
+    background-color: $background-transparent;
+    color: $color-light;
+  }
+
+  &.sm {
+    padding: $indent-xs $indent-sm;
+    font-size: $font-size-p-mobile;
+    font-weight: $font-weight-800;
+  }
+
+  &.lg {
+    padding: $indent-sm $indent-lg;
+    @include font-size($font-size-p-mobile, $font-size-p-desktop);
+    @include font-weight($font-weight-900);
+  }
+
+  &.bg-transparent {
+    background-color: $background-transparent;
+    color: $color-light;
+  }
+
+  &.bg-white {
+    background-color: $background-light;
+  }
+
+  &.bg-dark {
+    background-color: $color-dark;
+    color: $color-light;
+  }
+
+  &.color-light {
+    color: $color-light;
+  }
+
+  &.color-dark {
+    color: $color-dark;
+  }
+}

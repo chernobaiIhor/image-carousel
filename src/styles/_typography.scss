@@ -1,0 +1,33 @@
+:global {
+  h1 {
+    @include font-size($font-size-h1-mobile, $font-size-h1-desktop);
+    @include font-weight($font-weight-900);
+  }
+
+  h2 {
+    @include font-size($font-size-h2-mobile, $font-size-h2-desktop);
+    @include font-weight($font-weight-900);
+  }
+
+  p {
+    @include font-size($font-size-p-mobile, $font-size-p-desktop);
+    @include font-weight($font-weight-500);
+  }
+
+  button {
+    @include font-size($font-size-button-mobile, $font-size-button-desktop);
+    @include font-weight($font-weight-800);
+  }
+
+
+  h1, h2, button {
+    line-height: 1.4;
+    color: $color-light;
+    text-transform: uppercase;
+    margin-bottom: $indent-xs;
+  }
+
+  p {
+    line-height: 1.5;
+  }
+}

@@ -1,0 +1,71 @@
+:global {
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: $font-family;
+    color: $color-light;
+    background-color: $background-light;
+  }
+
+  main {
+    position: relative;
+    background-color: $background-black;
+    //min-height: 120vh;
+    //height: auto;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    opacity: 1;
+  }
+
+  .container {
+    position: relative;
+    padding: $indent-lg calc($indent-lg + 0.5rem);
+    z-index: 10;
+
+    @include lg-screen() {
+      padding: calc($indent-xl);
+    }
+  }
+
+  .full-fixed-width-500 {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .block-span {
+    display: block;
+  }
+
+  .mb-xs {
+    margin-bottom: $indent-xs;
+  }
+
+  .mb-sm {
+    margin-bottom: $indent-sm;
+  }
+
+  .mb-lg {
+    margin-bottom: $indent-lg;
+  }
+
+  .mb-xl {
+    margin-bottom: $indent-xl;
+  }
+
+  .mb-xxl {
+    margin-bottom: calc($indent-xl + 3rem);
+  }
+
+  .mb-blank-section {
+    margin-bottom: 9rem;
+  }
+}
