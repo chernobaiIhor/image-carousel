@@ -1,50 +1,25 @@
-# React + TypeScript + Vite
+# Image Carouse
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a **React** app built with **TypeScript** and **Vite**.
 
-Currently, two official plugins are available:
+## Available Scripts
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- `dev`: Starts the development server with **Vite** and enables hot module replacement (HMR).
+- `build`: Builds the app for production using **TypeScript** (`tsc -b`) and **Vite**.
+- `lint`: Runs **ESLint** to check for code quality issues.
+- `preview`: Previews the production build locally.
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+This project is structured as follows:
 
-- Configure the top-level `parserOptions` property like this:
+- **src/**: The source code for the application.
+    - **components/**: Reusable UI components.
+    - **assets/**: Static assets like images, fonts, etc.
+    - **styles/**: SCSS files for styling the app.
+    - **App.tsx**: The main application component.
+    - **main.tsx**: Entry point of the React app.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- **public/**: Static files that are served directly by Vite (e.g., `index.html`).
+- **vite.config.ts**: The configuration file for Vite.
+- **tsconfig.json**: The configuration file for TypeScript.
